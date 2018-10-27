@@ -28,8 +28,7 @@ import java.util.Calendar;
 
 public class AddAlarm extends AppCompatActivity {
 
-    SharedPreferences sp = getSharedPreferences("ALARM_DATA", Context.MODE_PRIVATE);
-    SharedPreferences.Editor editor = sp.edit();
+
     Calendar calendar = Calendar.getInstance();
     int year = calendar.get(Calendar.YEAR);
     int month = calendar.get(Calendar.MONTH);
@@ -194,11 +193,12 @@ public class AddAlarm extends AppCompatActivity {
     }
 
     public void setAlarm(){
-
+        SharedPreferences sp = getSharedPreferences("ALARM_DATA", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
         int size = checkAlarmId();
 
         editor.putInt("alarm_id",size);
-        editor.putString("alram_type",txtType.toString());
+        editor.putString("alarm_type",txtType.toString());
         editor.putString("alarm_date",txtDate.toString());
         editor.putString("alarm_time",txtTime.toString());
         editor.putString("alarm_repeat",txtRepeat.toString());
@@ -207,6 +207,7 @@ public class AddAlarm extends AppCompatActivity {
     }
 
     public int checkAlarmId(){
+        SharedPreferences sp = getSharedPreferences("ALARM_DATA", Context.MODE_PRIVATE);
         int size = sp.getAll().size();
 
         for (int i = 0 ; i < size ; i++){

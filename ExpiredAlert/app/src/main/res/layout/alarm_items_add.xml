@@ -19,7 +19,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/nameAlarm"
+            android:id="@+id/alarmTitle"
             android:layout_width="267dp"
             android:layout_height="65dp"
             android:ems="10"
