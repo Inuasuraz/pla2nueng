@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3D3C3F"
     >
 
     <LinearLayout
@@ -22,11 +23,11 @@
             android:layout_width="267dp"
             android:layout_height="65dp"
             android:ems="10"
-            android:textStyle="bold"
             android:singleLine="false"
+            android:text="Name of alert"
 
             android:textColor="#FFFFFF"
-            android:text="Name" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -40,7 +41,9 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="123dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="1dp">
+        android:layout_marginBottom="1dp"
+        android:background="#3D3C3F"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,8 +54,8 @@
 
             <TextView
                 android:id="@+id/detailText"
-                android:layout_width="312dp"
-                android:layout_height="63dp"
+                android:layout_width="295dp"
+                android:layout_height="67dp"
                 android:gravity="center_vertical"
                 android:text="@string/detail_alarm"
                 android:textColor="#FFFFFF"
@@ -61,7 +64,9 @@
             <RelativeLayout
                 android:id="@+id/type"
                 android:layout_width="match_parent"
-                android:layout_height="75dp">
+                android:layout_height="75dp"
+                android:clickable="true"
+                android:onClick="selectRepeatType">
 
 
                 <ImageView
@@ -102,17 +107,17 @@
                         android:id="@+id/typeOption"
                         android:layout_width="match_parent"
                         android:layout_height="24dp"
-                        android:text="TextView"
+                        android:text="textView"
                         android:textColor="#FFFFFF" />
                 </LinearLayout>
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/date"
-                android:clickable="true"
-                android:onClick="setDate"
                 android:layout_width="match_parent"
-                android:layout_height="75dp">
+                android:layout_height="75dp"
+                android:clickable="true"
+                android:onClick="setDate">
 
 
                 <ImageView
@@ -161,7 +166,9 @@
             <RelativeLayout
                 android:id="@+id/time"
                 android:layout_width="match_parent"
-                android:layout_height="75dp">
+                android:layout_height="75dp"
+                android:clickable="true"
+                android:onClick="setTime">
 
 
                 <ImageView
@@ -199,56 +206,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/timOption"
-                        android:layout_width="match_parent"
-                        android:layout_height="24dp"
-                        android:text="TextView"
-                        android:textColor="#FFFFFF" />
-                </LinearLayout>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/repeat"
-                android:layout_width="match_parent"
-                android:layout_height="75dp">
-
-
-                <ImageView
-                    android:id="@+id/repeatimg"
-                    android:layout_width="41dp"
-                    android:layout_height="36dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginEnd="327dp"
-                    tools:srcCompat="@drawable/ic_sync_grey600_24dp" />
-
-                <LinearLayout
-                    android:layout_width="186dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="72dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="126dp"
-                    android:layout_marginBottom="0dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/repeatText"
-                        android:layout_width="match_parent"
-                        android:layout_height="24dp"
-                        android:text="@string/repeat_text"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/repeatOption"
+                        android:id="@+id/timeOption"
                         android:layout_width="match_parent"
                         android:layout_height="24dp"
                         android:text="TextView"
@@ -258,6 +216,8 @@
 
             <RelativeLayout
                 android:id="@+id/round"
+                android:onClick="setRepeatNo"
+                android:clickable="true"
                 android:layout_width="match_parent"
                 android:layout_height="75dp">
 
@@ -317,6 +277,7 @@
         android:layout_marginStart="19dp"
         android:layout_marginTop="93dp"
         android:clickable="true"
+        android:src="@drawable/ic_notifications_on_white_24dp"
         app:fabSize="normal"
         app:useCompatPadding="false" />
 

@@ -1,6 +1,8 @@
 package expired.alert;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -13,11 +15,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
 
     private FloatingActionButton addReminder;
-
+    RelativeLayout alarm_1,alarm_2,alarm_3,alarm_4,alarm_5,alarm_6,alarm_7,alarm_8,alarm_9,alarm_10;
+    SharedPreferences sp = getSharedPreferences("ALARM_DATA", Context.MODE_PRIVATE);
+    SharedPreferences.Editor editor = sp.edit();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                 startActivity(intent);
             }
         });
+
     }
 
     @Override
