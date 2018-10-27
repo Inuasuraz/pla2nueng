@@ -7,4 +7,16 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+
+    <string name="title_alarm">Title</string>
+    <string name="title_date">Date and Time</string>
+    <string name="repeat_type">Repeat (hour)</string>
+
+    <string name="detail_alarm">Details</string>
+    <string name="date_text">Date</string>
+    <string name="time_text">Time</string>
+    <string name="repeat_text">Repeat</string>
+    <string name="round_text">Repetition Interval</string>
+    <string name="type_text">Type of Product</string>
+    <string name="date_option">date</string>
 </resources>

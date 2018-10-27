@@ -28,6 +28,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="expired.alert.MainActivity" />
         </activity>
+        <activity android:name=".AddAlarm"></activity>
     </application>
 
 </manifest>

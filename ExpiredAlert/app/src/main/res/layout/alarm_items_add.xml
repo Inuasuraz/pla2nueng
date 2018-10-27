@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#4A0593"
+        android:layout_height="124dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:gravity="center_vertical|end"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/nameAlarm"
+            android:layout_width="267dp"
+            android:layout_height="65dp"
+            android:ems="10"
+            android:textStyle="bold"
+            android:singleLine="false"
+
+            android:textColor="#FFFFFF"
+            android:text="Name" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="123dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3D3C3F"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/detailText"
+                android:layout_width="312dp"
+                android:layout_height="63dp"
+                android:gravity="center_vertical"
+                android:text="@string/detail_alarm"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+
+                <ImageView
+                    android:id="@+id/typeimg"
+                    android:layout_width="41dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="327dp"
+                    tools:srcCompat="@drawable/ic_subject_grey600_24dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="94dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="72dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="125dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/typeText"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="@string/type_text"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/typeOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="TextView"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/date"
+                android:clickable="true"
+                android:onClick="setDate"
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+
+                <ImageView
+                    android:id="@+id/dateimg"
+                    android:layout_width="41dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="327dp"
+                    tools:srcCompat="@drawable/ic_view_day_grey600_24dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="72dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="124dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dateText"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="@string/date_text"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dateOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="@string/date_option"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+
+                <ImageView
+                    android:id="@+id/timeimg"
+                    android:layout_width="41dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="327dp"
+                    tools:srcCompat="@drawable/ic_access_time_grey600_24dp" />
+
+                <LinearLayout
+                    android:layout_width="187dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="72dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="125dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/timeText"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="@string/time_text"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/timOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="TextView"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/repeat"
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+
+                <ImageView
+                    android:id="@+id/repeatimg"
+                    android:layout_width="41dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="327dp"
+                    tools:srcCompat="@drawable/ic_sync_grey600_24dp" />
+
+                <LinearLayout
+                    android:layout_width="186dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="72dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="126dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/repeatText"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="@string/repeat_text"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/repeatOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="TextView"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/round"
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+
+                <ImageView
+                    android:id="@+id/roundimg"
+                    android:layout_width="41dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="327dp"
+                    tools:srcCompat="@drawable/ic_unfold_more_grey600_24dp" />
+
+                <LinearLayout
+                    android:layout_width="187dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="72dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="125dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/roundText"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="@string/round_text"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/roundOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:text="TextView"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="93dp"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:useCompatPadding="false" />
+
+</RelativeLayout>
