@@ -65,7 +65,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="paddingPercent" value="35" />
+                                                <entry key="paddingPercent" value="5" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -78,8 +78,8 @@
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
                                       <entry key="cropped" value="true" />
-                                      <entry key="imageAsset" value="D:\Android App\pla2nueng\ExpiredAlert\img\5ba4cdea733de1eece09cfdbfdd51bfc_t.jpg" />
-                                      <entry key="outputName" value="ic_pla2" />
+                                      <entry key="iconShape" value="CIRCLE" />
+                                      <entry key="imageAsset" value="C:\Users\KIATS\Downloads\ic_launcher\res\mipmap-xxxhdpi\ic_launcher.png" />
                                     </map>
                                   </option>
                                 </PersistentState>
