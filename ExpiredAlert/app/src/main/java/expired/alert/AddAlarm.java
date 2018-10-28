@@ -61,9 +61,13 @@ public class AddAlarm extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.addAlarm:
-                checkInformation();
-                showNotification();
-                return true;
+                if (checkInformation()){
+                    showNotification();
+                    return true;
+                }else{
+                    return false;
+                }
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -163,8 +167,8 @@ public class AddAlarm extends AppCompatActivity {
         Notification notification =
                 new NotificationCompat.Builder(this) // this is context
                         .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle("DevAhoy News")
-                        .setContentText("สวัสดีครับ ยินดีต้อนรับเข้าสู่บทความ Android Notification :)")
+                        .setContentTitle("ExpiredAlert")
+                        .setContentText("การแจ้งเตือนจะเริมขึ้นในเวลา " + txtTime.getText() + " :)")
                         .setAutoCancel(true)
                         .build();
 
@@ -173,15 +177,14 @@ public class AddAlarm extends AppCompatActivity {
         notificationManager.notify(1000, notification);
     }
 
-    public void checkInformation(){
+    public boolean checkInformation(){
         if (checkDate+checkRepeat+checkTime+checkType == 4){
             resetAttribute();
-            setAlarm();
-//            Accept
+            return true;
         }else{
             Toast errorToast = Toast.makeText(getApplicationContext(), "กรุณาใส่ข้อมูลให้ครบ", Toast.LENGTH_SHORT);
             errorToast.show();
-
+            return false;
         }
     }
 
@@ -190,33 +193,6 @@ public class AddAlarm extends AppCompatActivity {
         checkTime = 0;
         checkRepeat = 0;
         checkDate = 0;
-    }
-
-    public void setAlarm(){
-        SharedPreferences sp = getSharedPreferences("ALARM_DATA", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        int size = checkAlarmId();
-
-        editor.putInt("alarm_id",size);
-        editor.putString("alarm_type",txtType.toString());
-        editor.putString("alarm_date",txtDate.toString());
-        editor.putString("alarm_time",txtTime.toString());
-        editor.putString("alarm_repeat",txtRepeat.toString());
-        editor.commit();
-
-    }
-
-    public int checkAlarmId(){
-        SharedPreferences sp = getSharedPreferences("ALARM_DATA", Context.MODE_PRIVATE);
-        int size = sp.getAll().size();
-
-        for (int i = 0 ; i < size ; i++){
-            if (sp.getInt("alarm_id",i) != i){
-                return i;
-            }
-        }
-
-        return size;
     }
 
 }
